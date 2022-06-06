@@ -1,0 +1,31 @@
+package com.zhou.crm.commons.utils;
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+
+/**
+ * 关于excel工具操作的工具类
+ */
+public class HSSFUtils {
+    /**
+     * 从指定的HSSFCell对象中获取列的值
+     * @return
+     */
+    public static String getCellValueForStr(HSSFCell cell){
+        String ret = "";
+        if (cell.getCellType() == HSSFCell.CELL_TYPE_NUMERIC) {
+            ret = cell.getNumericCellValue() + "";
+        } else if (cell.getCellType() == HSSFCell.CELL_TYPE_STRING) {
+            ret = cell.getStringCellValue();
+        } else if (cell.getCellType() == HSSFCell.CELL_TYPE_FORMULA) {
+            ret = cell.getCellFormula();
+        } else if (cell.getCellType() == HSSFCell.CELL_TYPE_BLANK) {
+            ret = "";
+        } else if (cell.getCellType() == HSSFCell.CELL_TYPE_BOOLEAN) {
+            ret = cell.getBooleanCellValue() + "";
+        } else {
+            ret = "";
+        }
+        return ret;
+    }
+
+}
