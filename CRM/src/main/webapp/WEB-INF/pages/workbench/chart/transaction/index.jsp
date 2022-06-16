@@ -75,6 +75,6 @@
 </head>
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="transactionChart" style="width: 600px;height:400px;"></div>
+    <div id="transactionChart" style="width: 1200px;height:650px;"></div>
 </body>
 </html>

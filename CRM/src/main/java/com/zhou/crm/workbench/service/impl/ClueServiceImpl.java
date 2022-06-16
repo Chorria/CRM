@@ -202,11 +202,11 @@ public class ClueServiceImpl implements ClueService {
                 }
                 transactionRemarkMapper.insertTransactionRemarkByList(transactionRemarkList);
             }
-            //调用Mapper层方法,删除线索的备注、线索和市场活动的关联关系和线索
-            clueRemarkMapper.deleteClueRemarkByClueId(clueId);
-            clueActivityRelationMapper.deleteClueActivityRelationByClueId(clueId);
-            clueMapper.deleteClueById(clueId);
         }
+        //调用Mapper层方法,删除线索的备注、线索和市场活动的关联关系和线索
+        clueRemarkMapper.deleteClueRemarkByClueId(clueId);
+        clueActivityRelationMapper.deleteClueActivityRelationByClueId(clueId);
+        clueMapper.deleteClueById(clueId);
     }
 
     @Override

@@ -348,10 +348,11 @@
 
 					var totalPages = 1;
 					if (data.totalRows % pageSize == 0) {
-						totalPages = data.totalPages / pageSize;
+						totalPages = data.totalRows/ pageSize;
 					} else {
-						totalPages = parseInt(data.totalPages / pageSize + 1);
+						totalPages = parseInt(data.totalRows / pageSize + 1);
 					}
+
 					$("#pageDiv").bs_pagination({
 						currentPage : pageNo,
 
@@ -364,7 +365,7 @@
 						showRowsPerPage : true,
 
 						onChangePage : function (event,pageObj) {
-							//当切换页号时,重新查询市场活动
+							//当切换页号时,重新查询联系人
 							queryContactsByConditionForPage(pageObj.currentPage,pageObj.rowsPerPage);
 							//初始化全选框
 							$("#checkAll").prop("checked",false);
